@@ -1,0 +1,42 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  gap: 16rem;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  
+
+  .menu_card {
+    background-color: #3a3a3a;
+    width: 20rem;
+    height: 28rem;
+    border-radius: 0.5rem;
+
+
+
+    .menu_card_image {
+      width: 100%;
+      height: 46%;
+      border-radius: 0.5rem;
+    }
+
+    .menu_card_title {
+      padding: 1rem
+    }
+
+    .menu_card_description {
+      padding: 1rem
+    }
+  }
+}
+
+.menu_card:hover {
+  outline-style:outset ;
+  outline-color: black;
+  
+}
