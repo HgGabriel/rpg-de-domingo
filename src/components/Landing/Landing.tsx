@@ -1,23 +1,21 @@
-import dndlogo from '../../assets/DD-Logo.png'
-import './styles.modules.scss'
+import dndlogo from "../../assets/DD-Logo.png";
+import styles from "./style.module.scss";
+import { Link } from "react-router-dom";
 
 function Landing() {
   return (
     <>
-      <div className='container'>
-        <a href="https://dnd.wizards.com/" target="_blank">
-          <img src={dndlogo} className="logo" alt="D&D logo" />
-        </a>
-      </div>
-      <h1>RPG de Domingo</h1>
-      <div className="card">
-        <button  className="button_enter">
-          Entrar
-        </button>
+      <div className={styles.screen}>
+        <div className={styles.landing_container}>
+          <a href="https://dnd.wizards.com/" target="_blank">
+            <img src={dndlogo} className={styles.logo} alt="D&D logo" />
+          </a>
+          <h1 className={styles.title}>RPG de Domingo</h1>
+          <Link className={styles.button_enter} to={"/Home"}> Entrar </Link>
+        </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Landing
-
+export default Landing;
