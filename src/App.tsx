@@ -1,31 +1,11 @@
-import { useState } from 'react'
-import dndlogo from './assets/D&D-logo.svg'
-import './App.css'
+import './index.css'
+// import Landing from './components/Landing/Landing.tsx'
+import Home from './components/Home/Home.tsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://dnd.wizards.com/" target="_blank">
-          <img src={dndlogo} className="logo" alt="D&D logo" />
-        </a>
-      </div>
-      <h1>Dungeons & Dragons</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Home />
+  );
 }
 
-export default App
+export default App;
