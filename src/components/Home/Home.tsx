@@ -25,7 +25,7 @@ function Home() {
             />
             <h1 className={styles.menu_card_title}>Itens</h1>
             <p className={styles.menu_card_description}>
-              Clique Aqui para Pesquisar itens de DND
+              Clique Aqui para Pesquisar itens
             </p>
           </div>
         </div>
