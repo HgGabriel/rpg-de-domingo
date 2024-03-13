@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import dndlogo from './assets/D&D-logo.svg'
-import './App.css'
+import './index.css'
+import Landing from './components/Landing/Landing.tsx'
+import Home from './components/Home/Home.tsx';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+<<<<<<< HEAD
       <div>
         <a href="https://dnd.wizards.com/" target="_blank">
           <img src={dndlogo} className="logo" alt="D&D logo" />
@@ -21,8 +21,14 @@ function App() {
       <p className="read-the-docs">
         Click on the D&D logo for help
       </p>
+=======
+    <Routes>
+      <Route path='/' element={<Home />}/>
+      <Route path='/' element={<Landing />}/>
+    </Routes>
+>>>>>>> 95b1c60c49ae6af12f73380af839287252474662
     </>
-  )
+  );
 }
 
-export default App
+export default App;
