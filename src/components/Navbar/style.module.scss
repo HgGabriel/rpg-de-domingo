@@ -1,0 +1,49 @@
+header {
+
+  .container {
+    display: flex;
+    padding: 1rem 1.5rem;
+    align-items: center;
+  }
+  .header_navbar {
+    width: 100%;
+
+    .nav_list {
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      width: 100%;
+
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      
+      li {
+        text-decoration: none;
+        a{
+          text-decoration: none;
+          &:visited {
+            color: white;
+          }
+        }
+      }
+
+      .header_logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+          height: 3rem;
+          filter: invert(93%) sepia(73%) saturate(1670%) hue-rotate(305deg)
+            brightness(93%) contrast(95%);
+        }
+
+        h1 {
+          font-size: 1rem;
+          color: white;
+        }
+      }
+    }
+  }
+}

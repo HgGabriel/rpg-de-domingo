@@ -2,6 +2,9 @@
   width: 100vw;
   height: 100vh;
 
+  background: rgb(43,42,76);
+background: linear-gradient(140deg, rgba(43,42,76,1) 0%, rgb(7, 7, 68) 42%, rgb(66, 3, 3) 100%);
+
   display: flex;
   flex-direction: column;
 
@@ -20,6 +23,8 @@
       transition: filter 300ms;
       &:hover {
         filter: drop-shadow(0 0 2em #e71b1b54);
+        transform: scale(1.1, 1.1);
+        transition: 0.4s;
       }
     }
   
@@ -43,6 +48,7 @@
 
       &:hover {
         border-color: #ff6464;
+        
       }
       &:focus,
       &:focus-visible {

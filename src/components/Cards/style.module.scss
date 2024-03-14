@@ -1,0 +1,39 @@
+.home_card {
+  background-color: #2b2a4c;
+  width: 16rem;
+  height: 22rem;
+  border-radius: 0.2rem;
+  transition: 0.4s;
+
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+    outline-style: outset;
+    outline-color: black;
+    transform: scale(1.1, 1.1);
+  }
+
+  .home_card_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  div {
+    .home_card_title {
+      padding: 1rem;
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+      padding: 8px;
+      text-align: center;
+    }
+
+    .home_card_description {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+}

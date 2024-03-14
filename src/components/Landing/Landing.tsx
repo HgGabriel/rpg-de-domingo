@@ -2,7 +2,7 @@ import dndlogo from "../../assets/DD-Logo.png";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
 
-function Landing() {
+export const Landing: React.FC = () => {
   return (
     <>
       <div className={styles.screen}>
@@ -17,5 +17,3 @@ function Landing() {
     </>
   );
 }
-
-export default Landing;
