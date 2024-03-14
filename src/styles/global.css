@@ -1,0 +1,24 @@
+:root {
+  --cor-primaria: #2B2A4C;
+  --cor-hover: #B31312;
+  --cor-terciaria: #EA906C;
+  --cor-secundaria: #EEE2DE;
+
+  --fonte-primaria: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --fonte-secundaria: 'montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, button, input, select, option, textarea {
+  font-family: var(--fonte-primaria);
+  
+}
+
+body {
+  background-color: #242424;
+}
