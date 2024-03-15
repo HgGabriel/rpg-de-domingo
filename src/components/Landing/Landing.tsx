@@ -1,4 +1,4 @@
-import dndlogo from "../../assets/DD-Logo.png";
+import dndlogo from "../../assets/D&D-logo.svg";
 import styles from "./style.module.scss";
 import { Link } from "react-router-dom";
 
