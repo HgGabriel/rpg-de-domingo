@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# RPG de Domingo 🎲
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a website built with React, SCSS, and Vite that utilizes the Dungeons and Dragons API. Users can decide between searching for monsters or items.
 
-Currently, two official plugins are available:
+## Features 🌟
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search for monsters by name, type, or other attributes.
+- Search for items by type, rarity, or other attributes.
+- Responsive design for seamless use on desktop and mobile devices.
 
-## Expanding the ESLint configuration
+## Technologies Used 💻
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+- ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-- Configure the top-level `parserOptions` property like this:
+- Dungeons and Dragons API
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Installation 🛠️
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/rpg-de-domingo.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd rpg-de-domingo
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+## Usage 🚀
+
+1. You can either run it on your local machine by installing the project or using our [deploy link](rpg-de-domingo.vercel.app) at Vercel.
+2. Choose between searching for monsters or items.
+3. Use the provided search filters to find specific monsters or items.
+4. Explore the details of the monsters or items displayed.
+
+## Contributing 🤝
+
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
