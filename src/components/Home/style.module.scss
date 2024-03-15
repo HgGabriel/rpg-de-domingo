@@ -15,14 +15,14 @@
     background-position: center;
     filter: brightness(
       0.7
-    ); /* Ajuste o valor para alterar a intensidade do escurecimento */
-    z-index: -1; /* Coloca a imagem de fundo atrás do conteúdo */
+    ); 
+    z-index: -1; 
     background-image: radial-gradient(
         circle at center,
         rgba(0, 0, 0, 0.466) 0%,
         rgb(0, 0, 0) 100%
       ),
-      url("https://i.pinimg.com/originals/f3/0a/8d/f30a8d25f0616d26369ffbf4c01ae0c0.jpg"); /* Substitua 'sua-imagem-url' pela URL da sua imagem */
+      url("https://i.pinimg.com/originals/f3/0a/8d/f30a8d25f0616d26369ffbf4c01ae0c0.jpg");
   }
 
   .card_container {
@@ -37,8 +37,12 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px ) {
   .screen {
+.background {
+  height: 110vh;
+  background-size: cover;
+}
     .card_container {
       display: flex;
       flex-direction: column;
