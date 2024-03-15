@@ -12,6 +12,11 @@
     outline-style: outset;
     outline-color: black;
     transform: scale(1.1, 1.1);
+    transition: all 0.5s;
+
+    .home_card_description {
+      display: flex;
+    }
   }
 
   .home_card_image {
@@ -31,9 +36,49 @@
     }
 
     .home_card_description {
+      background-color: #b31312;
+      border-radius: 0.5rem;
+      border-style: outset;
+      font-style: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+      color: #ffffff;
+      margin: 1rem;
+      font-weight: 500;
       font-size: 1.5rem;
       text-align: center;
+      display: none;
+      transition: all 0.5s;
+      border-color: #ea906c;
     }
   }
+}
 
+@media (max-height: 720px) {
+  .home_card {
+    width: 10rem;
+    height: 16rem;
+    div {
+      .home_card_title {
+        font-size: 1rem;
+      }
+      .home_card_description {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .home_card {
+    margin-top: 4rem;
+    width: 10rem;
+    height: 10rem;
+
+    &:hover {
+      transform: scale(1.4, 1.4);
+      .home_card_description {
+        display: none;
+        
+      }
+    }
+  }
 }
