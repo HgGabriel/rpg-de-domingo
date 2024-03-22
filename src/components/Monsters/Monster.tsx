@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import React, { FormEvent, useState, useEffect } from "react";
+import React, { FormEvent, useState, useEffect, BaseSyntheticEvent } from "react";
 
 interface MonsterProps {
   name: string;
@@ -8,7 +8,17 @@ interface MonsterProps {
 
 export const Monster: React.FC = () => {
   const [monster, setMonster] = useState<MonsterProps | null>(null);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(""); 
+
+  const debounce = (callback, delay) => {
+    let timerId;
+    return function (...args) {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        callback.apply(this, args);
+      }, delay);
+    };
+  };
 
   useEffect(() => {
     if (!search) return; // No need to fetch if search is empty
@@ -40,6 +50,12 @@ export const Monster: React.FC = () => {
     setSearch(userInput.value);
   }
 
+  const handleSearchChange = debounce((event:BaseSyntheticEvent) => {
+    setSearch(event.target.value.toLowerCase());
+    // Perform search logic here, like making API calls, filtering data, etc.
+  }, 500); // 500ms debounce delay
+
+
   return (
     <div>
       <h1 className={styles.titulo}>Tela de Monstros</h1>
@@ -48,8 +64,9 @@ export const Monster: React.FC = () => {
         <input
           type="text"
           id="input"
-          value={search}
-          onChange={(e) => setSearch(e.target.value.toLowerCase())}
+          // value={search}
+          // onChange={(e)=> setSearch(e.target.value.toLowerCase())}
+          onChange={handleSearchChange}
         />
         <button type="submit">Buscar</button>
       </form>
@@ -57,10 +74,10 @@ export const Monster: React.FC = () => {
         {monster ? (
           <>
             <h3>Nome do Monstro: {monster.name}</h3>
-            <h3>
+            <h3 hidden={monster.image == undefined}>
               Cara feia do Monstro:{" "}
               <img
-                src={`https://www.dnd5eapi.co${monster.image}`}
+                src={`https://www.dnd5eapi.co/${monster.image}`}
                 alt={monster.name}
               />
             </h3>
