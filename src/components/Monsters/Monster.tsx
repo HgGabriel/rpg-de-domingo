@@ -31,7 +31,6 @@ export const Monster: React.FC = () => {
     }
 
     loadMonsters();
-    console.log(monster);
   }, [debouncedFilter]);
 
   async function loadMonster(monsterUrl) {
