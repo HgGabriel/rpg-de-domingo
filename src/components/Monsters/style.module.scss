@@ -1,7 +1,51 @@
-.section {
+.container {
+  padding: 1rem;
   color: white;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  gap: 1rem;
+
+  .search_section{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    search {
+      background-color: blue;
+      padding: 1rem;
+    }
+
+    menu {
+      background-color: green;
+      height: 80%;
+
+      overflow-Y: scroll;
+
+      
+    }
+
+    .search_section_input {
+      width: 100%;
+      height: 1.8rem;
+
+      
+    }
+
+
+  }
+
+  .monster_section{
+    background-color: red;
+    width: 70%;
+    height: 100%;
+
+
+  }
+
 }
 
-.titulo {
-  color: red;
-}
