@@ -1,7 +1,105 @@
-.section {
+.container {
+  padding: 1rem;
   color: white;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  gap: 1rem;
+
+  .search_section{
+    width: 24%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    search {
+      background-color: rgb(1, 1, 19);
+      padding: 1rem;
+    }
+
+    .search_section_menu {
+      background-color: rgba(0, 0, 0, 0.288);
+      height: 100%;
+      overflow-Y: scroll;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      font-size: 20px;
+
+      li {
+        padding: 0.5rem;
+        list-style: none;
+        background-color: black;
+
+        transition: 0.5s;
+        
+        &:hover{
+          background-color: white;
+          color: black;
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    .search_section_input {
+      width: 100%;
+      height: 1.8rem;
+
+      
+    }
+
+
+  }
+
+  .monster_section{
+    background-color: rgba(0, 0, 0, 0.377);
+    width: 76%;
+    height: 100%;
+    padding: 0.5rem;
+    
+
+    .monster_section_card {
+      width: 30%;
+      height: 100%;
+      padding: 0.5rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border-style: inset;
+      border-color: black;
+      
+
+      h1 {
+        text-align: center;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .health_bar {
+        background-color: rgb(167, 0, 0);
+        text-align: center;
+      }
+
+      h3 {
+      
+        .dice{
+          font-size: 11px;
+          color: gray;
+        }
+
+      }
+
+    }
+
+  }
+
 }
 
-.titulo {
-  color: red;
-}

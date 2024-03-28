@@ -1,92 +1,92 @@
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.scss";
-import React, { FormEvent, useState, useEffect, BaseSyntheticEvent } from "react";
+import axios from "axios";
+import { useDebounce } from "../../custom-hooks/hooks";
 
-interface MonsterProps {
+interface Monster {
   name: string;
   image: string;
+  type: string;
+  hit_points:number;
+  hit_dice: string
+  alignment: string;
+  size: string
 }
 
 export const Monster: React.FC = () => {
-  const [monster, setMonster] = useState<MonsterProps | null>(null);
-  const [search, setSearch] = useState(""); 
-
-  const debounce = (callback, delay) => {
-    let timerId;
-    return function (...args) {
-      clearTimeout(timerId);
-      timerId = setTimeout(() => {
-        callback.apply(this, args);
-      }, delay);
-    };
-  };
+  const [listMonsters, setListMonsters] = useState([]);
+  const [filter, setFilter] = useState("");
+  const debouncedFilter = useDebounce(filter);
+  const [monster, setMonster] = useState<Monster>();
 
   useEffect(() => {
-    if (!search) return; // No need to fetch if search is empty
+    async function loadMonsters() {
+      const response = await axios.get("https://www.dnd5eapi.co/api/monsters");
+      const monstersData = response.data;
+      setListMonsters(
+        monstersData.results.filter((monstro) =>
+          monstro.name.toLowerCase().includes(debouncedFilter.toLowerCase())
+        )
+      );
+    }
 
-    const fetchMonster = async () => {
-      try {
-        const response = await fetch(
-          `https://www.dnd5eapi.co/api/monsters/${search}`
-        );
-        if (!response.ok) {
-          throw new Error('Monster not found');
-        }
-        const json = await response.json();
-        setMonster(json);
-      } catch (error) {
-        console.error('Error fetching monster:', error);
-        setMonster(null);
-      }
-    };
+    loadMonsters();
+  }, [debouncedFilter]);
 
-    fetchMonster();
-  }, [search]);
-
-  function handleSearchSubmit(event: FormEvent) {
-    event.preventDefault();
-    const userInput = (event.target as HTMLFormElement).querySelector(
-      'input'
-    ) as HTMLInputElement;
-    setSearch(userInput.value);
+  async function loadMonster(monsterUrl) {
+    const response = await axios.get(`https://www.dnd5eapi.co${monsterUrl}`);
+    setMonster(response.data);
   }
 
-  const handleSearchChange = debounce((event:BaseSyntheticEvent) => {
-    setSearch(event.target.value.toLowerCase());
-    // Perform search logic here, like making API calls, filtering data, etc.
-  }, 500); // 500ms debounce delay
-
-
   return (
-    <div>
-      <h1 className={styles.titulo}>Tela de Monstros</h1>
-      <h2>Monstrinho</h2>
-      <form onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          id="input"
-          // value={search}
-          // onChange={(e)=> setSearch(e.target.value.toLowerCase())}
-          onChange={handleSearchChange}
-        />
-        <button type="submit">Buscar</button>
-      </form>
-      <section className={styles.section}>
-        {monster ? (
-          <>
-            <h3>Nome do Monstro: {monster.name}</h3>
-            <h3 hidden={monster.image == undefined}>
-              Cara feia do Monstro:{" "}
-              <img
-                src={`https://www.dnd5eapi.co/${monster.image}`}
-                alt={monster.name}
-              />
-            </h3>
-            <h3>Descrição do Monstro:</h3>
-          </>
-        ) : (
-          <p>Monstro não encontrado</p>
-        )}
+    <div className={styles.container}>
+      <section className={styles.search_section}>
+        <search>
+          <h2>Filtrar:</h2>
+          <input
+            className={styles.search_section_input}
+            type="text"
+            placeholder="Aboleth..."
+            onChange={(e) => setFilter(e.target.value)}
+            value={filter}
+          />
+        </search>
+
+        <menu className={styles.search_section_menu}>
+          {listMonsters.map((monsterItem) => (
+            <li
+              onClick={() => {
+                loadMonster(monsterItem.url);
+                console.log(monster);
+              }}
+              key={monsterItem.index}
+            >
+              {monsterItem.name}
+            </li>
+          ))}
+        </menu>
       </section>
+      <section className={styles.monster_section}>
+  {monster && (
+    <div className={styles.monster_section_card}>
+      <h1>{monster.name}</h1>
+
+      {monster.image ? (
+        <img
+          src={`https://www.dnd5eapi.co${monster.image}`}
+          alt={monster.name}
+        />
+      ) : (
+        <div>Sem imagem</div>
+      )}
+      <h3 className={styles.health_bar}>{monster.hit_points}/{monster.hit_points}</h3>
+      <h4>Alinhamento: <span className={styles.stats}>{monster.alignment}</span> </h4>
+      <h4>Tipo: <span className={styles.stats}>{monster.type}</span> </h4>
+      <h4>Tamanho: <span className={styles.stats}>{monster.size}</span> </h4>
+    </div>
+  )}
+</section>
+
     </div>
   );
 };
