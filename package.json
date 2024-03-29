@@ -13,8 +13,8 @@
     "-": "^0.0.1",
     "@react-rxjs/core": "^0.10.7",
     "@react-rxjs/utils": "^0.9.7",
-    "D": "^1.0.0",
     "axios": "^1.6.8",
+    "D": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
@@ -23,6 +23,7 @@
     "yarn": "^1.22.22"
   },
   "devDependencies": {
+    "@types/node": "^20.11.30",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
