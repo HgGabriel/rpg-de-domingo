@@ -32,7 +32,6 @@
       background-color: #000000a9;
       height: 100%;
       overflow-y: scroll;
-      scrollbar-width: thin;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -65,10 +64,37 @@
     width: 76%;
     height: 100%;
     padding: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
 
-    
+    .monster_section_card {
+      width: 30%;
+      height: 100%;
+      padding: 0.5rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border-style: inset;
+      border-color: black;
+
+      h1 {
+        text-align: center;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .health_bar {
+        background-color: rgb(167, 0, 0);
+        text-align: center;
+      }
+
+      h3 {
+        .dice {
+          font-size: 11px;
+          color: gray;
+        }
+      }
+    }
   }
 }
