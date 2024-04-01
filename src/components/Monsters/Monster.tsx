@@ -77,10 +77,7 @@ export const Monster: React.FC = () => {
           alt={monster.name}
         />
       ) : (
-        <img
-          src={(`src/assets/icons/${monster.type}.jpg`)}
-          alt={monster.name}
-        />
+        <div>Sem imagem</div>
       )}
       <h3 className={styles.health_bar}>{monster.hit_points}/{monster.hit_points}</h3>
       <h4>Alinhamento: <span className={styles.stats}>{monster.alignment}</span> </h4>
