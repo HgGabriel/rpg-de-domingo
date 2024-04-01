@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import dndlogo from "../../assets/D&D-logo.svg";
+import dndlogo from "../../../assets/D&D-logo.svg";
 
 export const Navbar: React.FC = () => {
   return (

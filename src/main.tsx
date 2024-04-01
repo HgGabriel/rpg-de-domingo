@@ -4,7 +4,7 @@ import './styles/global.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { Landing } from './components/Landing/Landing.tsx';
 import { Home } from './components/Home/Home.tsx';
-import { Monster } from './components/Monsters/Monster.tsx';
+import { Monsters } from './components/Monsters/Monsters.tsx';
 
 const router = createBrowserRouter([{
   path: '/',
@@ -15,8 +15,8 @@ const router = createBrowserRouter([{
   element: <Home />
 },
 {
-  path: '/Monster',
-  element: <Monster />
+  path: '/Monsters',
+  element: <Monsters />
 }])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

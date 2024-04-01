@@ -6,10 +6,11 @@ interface CardProps {
   thumbnail: string;
   title: string;
   desc: string;
+  link: string;
 }
 
-export const Card: React.FC<CardProps> = ({ thumbnail, title, desc }) => (
-  <Link to={"/Monster"}>
+export const Card: React.FC<CardProps> = ({ thumbnail, title, desc, link }) => (
+  <Link to={link}>
     <div className={styles.home_card}>
       <img className={styles.home_card_image} src={thumbnail} alt={title} />
       <div>
